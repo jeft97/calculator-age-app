@@ -1,0 +1,219 @@
+:root{
+
+
+    /* Primary */
+
+    --Purple: hsl(259, 100%, 65%);
+    --light-red: hsl(0, 100%, 67%);
+    
+    /* Neutral */
+
+    --white: hsl(0, 0%, 100%);
+    --off-white: hsl(0, 0%, 94%);    
+    --light-grey: hsl(0, 0%, 86%);
+    --smokey-grey: hsl(0, 1%, 44%);
+    --off-black: hsl(0, 0%, 8%);
+
+    /* font */
+    
+    --ff-def:'Poppins', sans-serif;;
+    --fs-def:1.5rem;
+    --fw-def:700;
+    --bd-radius-shape:.6rem;
+}
+
+
+
+*,
+*::after,
+*::before{
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+input{
+  font: inherit;
+  width: 100%;
+}
+
+picture,
+image{
+  max-width: 100%;
+}
+
+
+html{
+  font-size: 62.5%;
+}
+
+body{
+  font-family: var(--ff-def);
+  font-size: var(--fs-def);
+  font-weight: var(--fw-def);
+  background-color: var(--light-grey);
+  color: var(--smokey-grey);
+ 
+}
+
+.wrap{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  padding: 0 clamp(1rem, 2vw, 3rem);
+}
+
+.calculator{
+  width: 100%;
+  max-width: 60rem;
+  padding:4.5rem clamp(2rem,4vw,4.5rem);
+  background-color: var(--white);
+  border-radius: 2rem 2rem 15rem 2rem;
+}
+
+.box-form{
+  display: flex;
+  align-items: center;
+  gap: 3.2rem;
+  margin-bottom: 1.5rem;
+}
+.input-box > label{
+  display: block;
+  font-size: 1.4rem;
+  margin-bottom: .5rem;
+  
+}
+.input-box > label.active{
+  color: var(--light-red);
+}
+
+.input-box > input{
+  padding: 1rem 1.5rem;
+  max-width: 8rem;
+  border: 1.5px solid var(--light-grey);
+  border-radius: var(--bd-radius-shape);
+  color: var(--off-black);
+  font-size: 1.7rem;
+}
+.input-box > input.active{
+  border-color: var(--light-red);
+}
+.controll{
+  display: flex;
+  align-items: center;
+  gap: .6rem;
+  margin-bottom: 1rem;
+}
+hr{
+  width: 80%;
+  display: block;
+  border: none;
+  background-color: var(--light-grey);
+  height: 1.1px;
+}
+
+.btn{
+  appearance: none;
+  border: none;
+ 
+  width: 6rem;
+  height: 6rem;
+  border-radius: 50%;
+  background-color: var(--Purple);
+  color: var(--white);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all .5s;
+}
+
+.btn:hover{
+  background-color: var(--off-black);
+}
+.btn>img{
+  height: 2.5rem;
+}
+
+.result{
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.result > strong{
+  display: inline-block;
+  font-weight: 800;
+  font-size: 6rem;
+  font-style: italic;
+  line-height: .9;
+  color: var(--off-black);
+}
+
+.result--value{
+  display: inline-block;
+  margin-right: .5rem;
+  color: var(--Purple);
+}
+
+.error{
+  font-weight: 100;
+  font-size: 1rem;
+  color: var(--light-red);
+  display: none;
+
+}
+
+.error.error--active{
+  display: block;
+}
+
+@media only screen and (max-width:431px) {
+  html{
+    font-size: 50%;
+  }
+
+  .input-box > input{
+    padding: 1rem 1rem;
+    max-width: 6rem;
+    font-size: 1.4rem;
+  }
+  .result > strong{
+    font-size: 4rem;
+  }
+
+  
+  
+}
+
+@media only screen and (max-width:431px) {
+  .btn{
+    height: 5rem;
+    width: 5rem;
+    font-size: 1.8rem;
+    position: absolute;
+    transform: translate(-50%,-50%);
+    top: 50%;
+    left: 42%;
+  }
+  .controll{
+    position: relative;
+    display:flex;
+    margin: 4rem 0;
+  }
+  .result > strong{
+    font-size: 3.5rem;
+  }
+  .calculator{
+    border-radius: 2rem 2rem 10rem 2rem;
+  }
+  .btn{
+    width: 4.8rem;
+    height: 4.8rem;
+  }
+  .btn>img{
+    height: 2rem;
+  }
+  
+}
